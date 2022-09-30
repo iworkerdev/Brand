@@ -1,11 +1,8 @@
 // theme.ts (tsx file with usage of StyleFunctions, see 4.)
 
-import { darken, transparentize, whiten } from "@chakra-ui/theme-tools"
+import { darken, whiten } from "@chakra-ui/theme-tools"
 
-const mode = (lightVariant, darkVariant) => (props) => {
-  const { colorMode } = props
-  return colorMode === "light" ? lightVariant : darkVariant
-}
+import { getColorModeValue } from "../BrandLib/functions"
 
 const BrandButton = {
   // 1. We can update the base styles
@@ -28,13 +25,13 @@ const BrandButton = {
     },
 
     primary: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.neutral.400",
         "backgrounds.dark.neutral.400"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.neutral.400", 20),
           darken("backgrounds.dark.neutral.400", 20)
         )(props),
@@ -42,20 +39,20 @@ const BrandButton = {
     }),
     primary_outline: (props) => ({
       bg: "transparent",
-      color: mode(
+      color: getColorModeValue(
         "backgrounds.light.neutral.400",
         "backgrounds.dark.neutral.400"
       )(props),
       border: "1px solid",
-      color: mode("text.light.300", "text.dark.300")(props),
-      borderColor: mode(
+      color: getColorModeValue("text.light.300", "text.dark.300")(props),
+      borderColor: getColorModeValue(
         "backgrounds.light.neutral.400",
         "backgrounds.dark.neutral.400"
       )(props),
       _hover: {
-        color: mode("text.dark.300", "text.light.300")(props),
+        color: getColorModeValue("text.dark.300", "text.light.300")(props),
 
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.neutral.400",
           "backgrounds.dark.neutral.400"
         )(props),
@@ -63,13 +60,13 @@ const BrandButton = {
     }),
 
     accent: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.accent.300",
         "backgrounds.dark.accent.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.accent.300", 20),
           darken("backgrounds.dark.accent.300", 20)
         )(props),
@@ -78,16 +75,16 @@ const BrandButton = {
 
     accent_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.accent", "text.dark.accent")(props),
+      color: getColorModeValue("text.light.accent", "text.dark.accent")(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.accent.300",
         "backgrounds.dark.accent.300"
       )(props),
       _hover: {
         color: "white",
 
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.accent.300",
           "backgrounds.dark.accent.300"
         )(props),
@@ -95,13 +92,13 @@ const BrandButton = {
     }),
 
     attention: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.attention.300",
         "backgrounds.dark.attention.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.attention.300", 20),
           darken("backgrounds.dark.attention.300", 20)
         )(props),
@@ -110,16 +107,19 @@ const BrandButton = {
 
     attention_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.attention", "text.dark.attention")(props),
+      color: getColorModeValue(
+        "text.light.attention",
+        "text.dark.attention"
+      )(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.attention.300",
         "backgrounds.dark.attention.300"
       )(props),
       _hover: {
         color: "white",
 
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.attention.300",
           "backgrounds.dark.attention.300"
         )(props),
@@ -127,13 +127,13 @@ const BrandButton = {
     }),
 
     danger: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.danger.300",
         "backgrounds.dark.danger.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.danger.300", 20),
           darken("backgrounds.dark.danger.300", 20)
         )(props),
@@ -142,15 +142,15 @@ const BrandButton = {
 
     danger_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.danger", "text.dark.danger")(props),
+      color: getColorModeValue("text.light.danger", "text.dark.danger")(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.danger.300",
         "backgrounds.dark.danger.300"
       )(props),
       _hover: {
         color: "white",
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.danger.300",
           "backgrounds.dark.danger.300"
         )(props),
@@ -158,13 +158,13 @@ const BrandButton = {
     }),
 
     open: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.open.300",
         "backgrounds.dark.open.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.open.300", 20),
           darken("backgrounds.dark.open.300", 20)
         )(props),
@@ -173,15 +173,15 @@ const BrandButton = {
 
     open_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.open", "text.dark.open")(props),
+      color: getColorModeValue("text.light.open", "text.dark.open")(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.open.300",
         "backgrounds.dark.open.300"
       )(props),
       _hover: {
         color: "white",
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.open.300",
           "backgrounds.dark.open.300"
         )(props),
@@ -189,13 +189,13 @@ const BrandButton = {
     }),
 
     closed: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.closed.300",
         "backgrounds.dark.closed.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.closed.300", 20),
           darken("backgrounds.dark.closed.300", 20)
         )(props),
@@ -204,15 +204,15 @@ const BrandButton = {
 
     closed_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.closed", "text.dark.closed")(props),
+      color: getColorModeValue("text.light.closed", "text.dark.closed")(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.closed.300",
         "backgrounds.dark.closed.300"
       )(props),
       _hover: {
         color: "white",
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.closed.300",
           "backgrounds.dark.closed.300"
         )(props),
@@ -220,13 +220,13 @@ const BrandButton = {
     }),
 
     done: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.done.300",
         "backgrounds.dark.done.300"
       )(props),
       color: "white",
       _hover: {
-        bg: mode(
+        bg: getColorModeValue(
           whiten("backgrounds.light.done.300", 20),
           darken("backgrounds.dark.done.300", 20)
         )(props),
@@ -235,15 +235,15 @@ const BrandButton = {
 
     done_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.done", "text.dark.done")(props),
+      color: getColorModeValue("text.light.done", "text.dark.done")(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.done.300",
         "backgrounds.dark.done.300"
       )(props),
       _hover: {
         color: "white",
-        bg: mode(
+        bg: getColorModeValue(
           "backgrounds.light.done.300",
           "backgrounds.dark.done.300"
         )(props),
@@ -251,14 +251,14 @@ const BrandButton = {
     }),
 
     secondary: (props) => ({
-      bg: mode(
+      bg: getColorModeValue(
         "backgrounds.light.secondary.200",
         "backgrounds.dark.secondary.200"
       )(props),
-      color: mode("text.light.300", "text.dark.300")(props),
+      color: getColorModeValue("text.light.300", "text.dark.300")(props),
       _hover: {
-        color: mode("text.light.300", "text.dark.300")(props),
-        bg: mode(
+        color: getColorModeValue("text.light.300", "text.dark.300")(props),
+        bg: getColorModeValue(
           whiten("backgrounds.light.secondary.200", 20),
           darken("backgrounds.dark.secondary.200", 20)
         )(props),
@@ -267,15 +267,18 @@ const BrandButton = {
 
     secondary_outline: (props) => ({
       bg: "transparent",
-      color: mode("text.light.secondary", "text.dark.secondary")(props),
+      color: getColorModeValue(
+        "text.light.secondary",
+        "text.dark.secondary"
+      )(props),
       border: "1px solid",
-      borderColor: mode(
+      borderColor: getColorModeValue(
         "backgrounds.light.secondary.200",
         "backgrounds.dark.secondary.200"
       )(props),
       _hover: {
-        color: mode("text.light.300", "text.dark.300")(props),
-        bg: mode(
+        color: getColorModeValue("text.light.300", "text.dark.300")(props),
+        bg: getColorModeValue(
           "backgrounds.light.secondary.200",
           "backgrounds.dark.secondary.200"
         )(props),
