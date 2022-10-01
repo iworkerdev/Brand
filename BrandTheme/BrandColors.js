@@ -1,5 +1,5 @@
 const BrandColors = {
-  text: {
+  colors: {
     light: {
       300: "#24292f",
       200: "#57606a",
@@ -17,7 +17,7 @@ const BrandColors = {
       300: "#c9d1d9",
       200: "#8b949e",
       100: "#6e7781",
-      0: "#ffffff",
+      "000": "#000000",
       accent: "#58a6ff",
       attention: "#d29922",
       danger: "#f85149",

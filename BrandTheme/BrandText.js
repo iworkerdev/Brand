@@ -1,7 +1,7 @@
 import { getColorModeValue } from "../BrandLib/functions"
 
 const BrandText = {
-  // 2. We can add a new text size or extend existing
+  // 2. We can add a new colors size or extend existing
   sizes: {
     "2xs": {
       fontSize: "10px",
@@ -79,40 +79,61 @@ const BrandText = {
   // 3. We can add a new visual variant
   variants: {
     primary: (props) => ({
-      color: getColorModeValue("text.light.300", "text.dark.300")(props),
+      color: getColorModeValue("colors.light.300", "colors.dark.300")(props),
     }),
     secondary: (props) => ({
       color: getColorModeValue(
-        "text.light.secondary",
-        "text.dark.secondary"
+        "colors.light.secondary",
+        "colors.dark.secondary"
       )(props),
     }),
     subtext: (props) => ({
-      color: getColorModeValue("text.light.200", "text.dark.200")(props),
+      color: getColorModeValue("colors.light.200", "colors.dark.200")(props),
     }),
     muted: (props) => ({
-      color: getColorModeValue("text.light.100", "text.dark.100")(props),
+      color: getColorModeValue("colors.light.100", "colors.dark.100")(props),
     }),
     accent: (props) => ({
-      color: getColorModeValue("text.light.accent", "text.dark.accent")(props),
+      color: getColorModeValue(
+        "colors.light.accent",
+        "colors.dark.accent"
+      )(props),
     }),
     attention: (props) => ({
       color: getColorModeValue(
-        "text.light.attention",
-        "text.dark.attention"
+        "colors.light.attention",
+        "colors.dark.attention"
       )(props),
     }),
     danger: (props) => ({
-      color: getColorModeValue("text.light.danger", "text.dark.danger")(props),
+      color: getColorModeValue(
+        "colors.light.danger",
+        "colors.dark.danger"
+      )(props),
     }),
     open: (props) => ({
-      color: getColorModeValue("text.light.open", "text.dark.open")(props),
+      color: getColorModeValue("colors.light.open", "colors.dark.open")(props),
     }),
     closed: (props) => ({
-      color: getColorModeValue("text.light.closed", "text.dark.closed")(props),
+      color: getColorModeValue(
+        "colors.light.closed",
+        "colors.dark.closed"
+      )(props),
     }),
     done: (props) => ({
-      color: getColorModeValue("text.light.done", "text.dark.done")(props),
+      color: getColorModeValue("colors.light.done", "colors.dark.done")(props),
+    }),
+    white: (props) => ({
+      color: getColorModeValue("colors.light.000", "colors.light.000")(props),
+    }),
+    black: (props) => ({
+      color: getColorModeValue("colors.dark.000", "colors.dark.000")(props),
+    }),
+    black_white: (props) => ({
+      color: getColorModeValue("colors.dark.000", "colors.light.000")(props),
+    }),
+    white_black: (props) => ({
+      color: getColorModeValue("colors.light.000", "colors.dark.000")(props),
     }),
   },
   // 4. We can override existing variants

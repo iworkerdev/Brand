@@ -44,13 +44,13 @@ const BrandButton = {
         "backgrounds.dark.neutral.400"
       )(props),
       border: "1px solid",
-      color: getColorModeValue("text.light.300", "text.dark.300")(props),
+      color: getColorModeValue("colors.light.300", "colors.dark.300")(props),
       borderColor: getColorModeValue(
         "backgrounds.light.neutral.400",
         "backgrounds.dark.neutral.400"
       )(props),
       _hover: {
-        color: getColorModeValue("text.dark.300", "text.light.300")(props),
+        color: getColorModeValue("colors.dark.300", "colors.light.300")(props),
 
         bg: getColorModeValue(
           "backgrounds.light.neutral.400",
@@ -75,7 +75,10 @@ const BrandButton = {
 
     accent_outline: (props) => ({
       bg: "transparent",
-      color: getColorModeValue("text.light.accent", "text.dark.accent")(props),
+      color: getColorModeValue(
+        "colors.light.accent",
+        "colors.dark.accent"
+      )(props),
       border: "1px solid",
       borderColor: getColorModeValue(
         "backgrounds.light.accent.300",
@@ -108,8 +111,8 @@ const BrandButton = {
     attention_outline: (props) => ({
       bg: "transparent",
       color: getColorModeValue(
-        "text.light.attention",
-        "text.dark.attention"
+        "colors.light.attention",
+        "colors.dark.attention"
       )(props),
       border: "1px solid",
       borderColor: getColorModeValue(
@@ -142,7 +145,10 @@ const BrandButton = {
 
     danger_outline: (props) => ({
       bg: "transparent",
-      color: getColorModeValue("text.light.danger", "text.dark.danger")(props),
+      color: getColorModeValue(
+        "colors.light.danger",
+        "colors.dark.danger"
+      )(props),
       border: "1px solid",
       borderColor: getColorModeValue(
         "backgrounds.light.danger.300",
@@ -173,7 +179,7 @@ const BrandButton = {
 
     open_outline: (props) => ({
       bg: "transparent",
-      color: getColorModeValue("text.light.open", "text.dark.open")(props),
+      color: getColorModeValue("colors.light.open", "colors.dark.open")(props),
       border: "1px solid",
       borderColor: getColorModeValue(
         "backgrounds.light.open.300",
@@ -204,7 +210,10 @@ const BrandButton = {
 
     closed_outline: (props) => ({
       bg: "transparent",
-      color: getColorModeValue("text.light.closed", "text.dark.closed")(props),
+      color: getColorModeValue(
+        "colors.light.closed",
+        "colors.dark.closed"
+      )(props),
       border: "1px solid",
       borderColor: getColorModeValue(
         "backgrounds.light.closed.300",
@@ -235,7 +244,7 @@ const BrandButton = {
 
     done_outline: (props) => ({
       bg: "transparent",
-      color: getColorModeValue("text.light.done", "text.dark.done")(props),
+      color: getColorModeValue("colors.light.done", "colors.dark.done")(props),
       border: "1px solid",
       borderColor: getColorModeValue(
         "backgrounds.light.done.300",
@@ -255,9 +264,9 @@ const BrandButton = {
         "backgrounds.light.secondary.200",
         "backgrounds.dark.secondary.200"
       )(props),
-      color: getColorModeValue("text.light.300", "text.dark.300")(props),
+      color: getColorModeValue("colors.light.300", "colors.dark.300")(props),
       _hover: {
-        color: getColorModeValue("text.light.300", "text.dark.300")(props),
+        color: getColorModeValue("colors.light.300", "colors.dark.300")(props),
         bg: getColorModeValue(
           whiten("backgrounds.light.secondary.200", 20),
           darken("backgrounds.dark.secondary.200", 20)
@@ -268,8 +277,8 @@ const BrandButton = {
     secondary_outline: (props) => ({
       bg: "transparent",
       color: getColorModeValue(
-        "text.light.secondary",
-        "text.dark.secondary"
+        "colors.light.secondary",
+        "colors.dark.secondary"
       )(props),
       border: "1px solid",
       borderColor: getColorModeValue(
@@ -277,7 +286,7 @@ const BrandButton = {
         "backgrounds.dark.secondary.200"
       )(props),
       _hover: {
-        color: getColorModeValue("text.light.300", "text.dark.300")(props),
+        color: getColorModeValue("colors.light.300", "colors.dark.300")(props),
         bg: getColorModeValue(
           "backgrounds.light.secondary.200",
           "backgrounds.dark.secondary.200"
