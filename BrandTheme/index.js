@@ -36,7 +36,7 @@ const theme = extendTheme({
           "backgrounds.dark.primary.300"
         )(props),
         lineHeight: "base",
-        fontFamily: "body",
+        fontFamily: "'DM Sans', sans-serif",
       },
     }),
   },
