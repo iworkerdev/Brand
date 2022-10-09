@@ -3,10 +3,10 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons"
 
 import React from "react"
 
-const ToggleThemeButton = () => {
+const ToggleThemeButton = ({ ...props }) => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <Button onClick={toggleColorMode}>
+    <Button variant={"ghost"} onClick={toggleColorMode} {...props}>
       {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
     </Button>
   )
