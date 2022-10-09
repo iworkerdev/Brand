@@ -3,7 +3,7 @@ import React from "react"
 import { useRouter } from "next/router"
 
 const BrandHead = ({
-  description = "Pioneering edge Software Solutions",
+  description = "Champions for beautifully designed, solidly engineered digital experiences",
   title = "Mshindi Creations",
   iconUrl = "/logoAssets/ico/01.ico",
   author = "Mshindi Creations",
