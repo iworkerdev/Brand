@@ -1,4 +1,4 @@
-import { getColorModeValue } from "../BrandLib/functions"
+import { getColorModeValue } from "../BrandLib/functions";
 
 const BrandText = {
   // 2. We can add a new colors size or extend existing
@@ -123,12 +123,14 @@ const BrandText = {
     done: (props) => ({
       color: getColorModeValue("colors.light.done", "colors.dark.done")(props),
     }),
-    white: (props) => ({
+
+    text_white: (props) => ({
       color: getColorModeValue("colors.light.000", "colors.light.000")(props),
     }),
-    black: (props) => ({
+    text_black: (props) => ({
       color: getColorModeValue("colors.dark.000", "colors.dark.000")(props),
     }),
+
     black_white: (props) => ({
       color: getColorModeValue("colors.dark.000", "colors.light.000")(props),
     }),
@@ -140,6 +142,6 @@ const BrandText = {
   defaultProps: {
     variant: "primary",
   },
-}
+};
 
-export default BrandText
+export default BrandText;
