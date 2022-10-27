@@ -9,19 +9,19 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
-import React from "react"
-import { useRef } from "react"
+import React from "react";
+import { useRef } from "react";
 
 const ConfirmationDialogModal: React.FC<{
-  title: string
-  description: string
-  onConfirm: () => void
-  onCancel?: () => void
-  confirmButtonText?: string
-  cancelButtonText?: string
-  children: (onOpen: () => void) => React.ReactNode
+  title: string;
+  description: string;
+  onConfirm: () => void;
+  onCancel?: () => void;
+  confirmButtonText?: string;
+  cancelButtonText?: string;
+  children: (onOpen: () => void) => React.ReactNode;
 }> = ({
   children,
   title,
@@ -31,25 +31,28 @@ const ConfirmationDialogModal: React.FC<{
   confirmButtonText = "Confirm",
   cancelButtonText = "Cancel",
 }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const cancelRef = useRef<HTMLButtonElement>(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = useRef<HTMLButtonElement>(null);
 
   const modalBg = useColorModeValue(
     "backgrounds.light.primary.200",
     "backgrounds.dark.primary.200"
-  )
-  const borderColor = useColorModeValue("borders.light.100", "borders.dark.100")
+  );
+  const borderColor = useColorModeValue(
+    "borders.light.100",
+    "borders.dark.100"
+  );
 
   const handleConfirmation = () => {
-    onConfirm()
-    onClose()
-  }
+    onConfirm();
+    onClose();
+  };
 
   return (
     <>
       {children(onOpen)}
       <AlertDialog
-        motionPreset='slideInBottom'
+        motionPreset="slideInBottom"
         isOpen={isOpen}
         onClose={onClose}
         isCentered
@@ -67,15 +70,28 @@ const ConfirmationDialogModal: React.FC<{
             gap={3}
             justifyContent={"center"}
             alignItems={"center"}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleConfirmation();
+              }
+            }}
           >
             <AlertDialogHeader>
-              <Text fontWeight={700} size={"2xl"} variant={"black_white"}>
+              <Text
+                fontWeight={700}
+                size={"2xl"}
+                variant={"black_white"}
+              >
                 {title}
               </Text>
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              <Text variant={"secondary"} size={"sm"} textAlign={"center"}>
+              <Text
+                variant={"secondary"}
+                size={"sm"}
+                textAlign={"center"}
+              >
                 {description}
               </Text>
             </AlertDialogBody>
@@ -92,8 +108,8 @@ const ConfirmationDialogModal: React.FC<{
                 px={5}
                 ref={cancelRef}
                 onClick={() => {
-                  typeof onCancel === "function" && onCancel()
-                  onClose()
+                  typeof onCancel === "function" && onCancel();
+                  onClose();
                 }}
               >
                 {cancelButtonText}
@@ -112,6 +128,6 @@ const ConfirmationDialogModal: React.FC<{
         </AlertDialogOverlay>
       </AlertDialog>
     </>
-  )
-}
-export default ConfirmationDialogModal
+  );
+};
+export default ConfirmationDialogModal;
