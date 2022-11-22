@@ -14,5 +14,5 @@
 > Add as a submodule
 
 ```sh
-git submodule add https://github.com/MshindiCreationsInc/Brand.git
+git submodule add https://github.com/iworkerdev/Brand.git
 ```
